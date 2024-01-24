@@ -1,4 +1,4 @@
-import { View, Text, FlatList } from 'react-native'
+import { View, Text, FlatList, Touchable, TouchableOpacity, Image } from 'react-native'
 import React from 'react'
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 import { bodyParts } from '../constants';
@@ -28,6 +28,16 @@ export default function BodyParts() {
 
 const BodyPartCard = ({item, index}) => {
     return (
-        <Text>Item</Text>
+        <View>
+            <TouchableOpacity
+                style={{width: wp(44), height: wp(52)}}
+                className="flex justify-end p-4 mb-4">
+                    <Image 
+                        source={item.image} 
+                        resizeMode='cover'
+                        style={{width: wp(44), height: wp(52)}}
+                    />
+                </TouchableOpacity>
+        </View>
     )
 }
