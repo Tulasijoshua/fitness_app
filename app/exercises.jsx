@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity, ScrollView, Image } from 'react-native'
+import { View, Text, TouchableOpacity, Image } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 import { useLocalSearchParams, useRouter } from 'expo-router'
@@ -7,6 +7,7 @@ import { demoExercises } from '../constants';
 import { StatusBar } from 'expo-status-bar';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import ExerciseList from '../components/ExerciseList';
+import {ScrollView} from 'react-native-virtualized-view'
 
 
 export default function Exercises() {
