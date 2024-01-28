@@ -1,7 +1,9 @@
-import { View, Text } from 'react-native'
+import { View, Text, FlatList } from 'react-native'
 import React from 'react'
+import { useRouter } from 'expo-router';
 
 export default function ExerciseList({data}) {
+    const router = useRouter();
   return (
     <View>
       <FlatList 
@@ -13,8 +15,12 @@ export default function ExerciseList({data}) {
         columnWrapperStyle={{
             justifyContent: 'space-between'
         }}
-        renderItem={({item, index}) => <Exercise router={router} index={index} item={item}/>}
+        renderItem={({item, index}) => <ExerciseCard router={router} index={index} item={item}/>}
       />
     </View>
   )
+}
+
+const ExerciseCard = () => {
+    <Text>Exercise Card</Text>
 }
