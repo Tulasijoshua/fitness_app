@@ -49,6 +49,13 @@ export default function exerciseDetails() {
             {item?.secondaryMuscles}
           </Text>
         </Text>
+        <Text style={{fontSize: hp(2)}}
+          className="text-neutral-800 tracking-wide"
+        >
+          Target <Text className="font-bold text-neutral-800">
+            {item?.target}
+          </Text>
+        </Text>
       </ScrollView>
     </View>
   )
