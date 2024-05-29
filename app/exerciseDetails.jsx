@@ -5,6 +5,7 @@ import { Image } from 'expo-image';
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Animated, { FadeInDown } from 'react-native-reanimated';
+import { StatusBar } from 'expo-status-bar';
 
 
 export default function exerciseDetails() {
@@ -14,6 +15,7 @@ export default function exerciseDetails() {
     console.log('got item: ', item)
   return (
     <View class="flex flex-1 pt-[7rem]">
+      <StatusBar />
       <View class="shadow-md bg-neutral-200 rounded-b-[40px]">
         <Image
           source={{uri: item.gifUrl}}
@@ -76,7 +78,7 @@ export default function exerciseDetails() {
           item.instructions?.split(',').map((instruction, index) => {
             return (
               <Animated.Text
-                entering={FadeInDown.delay(500).duration(300).springify()} 
+                entering={FadeInDown.delay((index+6) * 100).duration(300).springify()} 
                 key={instruction}
                 style={{fontSize: hp(1.7)}}
                 className="text-neutral-800"
